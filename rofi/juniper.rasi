@@ -32,11 +32,12 @@
     selected-active-foreground:  @active-foreground;
     selected-active-background:  @selected-normal-background;
     border-color:                @foreground;
-    spacing:                     2;
+    spacing:                     3;
     separatorcolor:              @normal-background;
     background-color:            rgba ( 0, 0, 0, 0 % );
     scrollbar-color:		 @foreground-alt;
-    font:			 "Terminess Nerd Font Mono 17";
+    // font:			 "Terminess Nerd Font Mono 17";
+    font:			 "scientifica 20";
 }
 window {
     background-color: @background;
@@ -146,7 +147,7 @@ entry {
 }
 prompt {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: @foreground;
 }
 textbox-prompt-colon {
     expand:     false;
