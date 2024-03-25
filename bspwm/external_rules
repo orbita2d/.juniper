@@ -1,0 +1,17 @@
+#!/bin/bash
+
+wid=$1
+class=$(echo ${2} | xargs)
+instance=$(echo ${3} | xargs)
+title=$(xtitle "$wid")
+
+#logfile=$HOME/.config/bspwm/external_rules_logfile
+logfile=/dev/null
+
+printf "Wid: $wid Class: $class Instance: $instance Title: $title \n" >> $logfile
+
+case "$class" in
+  (Firefox) echo border=false;;
+  (Zathura) echo state=tiled;;
+  (Spotify) echo desktop='Music'\ follow=off\ border=false;;
+esac;

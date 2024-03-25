@@ -1,0 +1,5 @@
+configuration {
+rofi.teminal:		urxvt
+rofi.sidebar-mode:	false
+theme: "flamboyant"
+}

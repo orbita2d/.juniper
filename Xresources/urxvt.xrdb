@@ -1,0 +1,27 @@
+!###########################
+!## URXVT Xresources File ##
+!###########################
+
+URxvt*transparent:	false
+URxvt*letterSpace:      2
+URxvt*lineSpace:	0
+URxvt*shading:          10
+URxvt*internalBorder:   16
+URxvt.perl-ext-commot: 	default,clipboard,matcher,keyboard-select
+URxvt.url-launcher: 	/usr/bin/xdg-open
+URxvt.keysym.M-u: 	perl:matcher:select
+URxvt.keysym.M-l:	perl:matcher:list
+URxvt.keysym.M-k:	perl:matcher:last
+URxvt.matcher.button: 	1
+URxvt.underlineURLs:    true
+URxvt.scrollBar:        false
+! URxvt*font:		xft:Terminess Nerd Font Mono:size=14
+URxvt*font:		xft:scientifica:size=14
+URxvt.geometry:		80x60
+
+URxvt.keysym.Shift-Control-V: 	eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: 	eval:selection_to_clipboard
+URxvt.keysym.Control-Right: 	\033[1;5C
+URxvt.keysym.Control-Left: 	\033[1;5D
+URxvt.iso14755: 		false
+URxvt.iso14755_52: 		false

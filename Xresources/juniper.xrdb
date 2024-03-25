@@ -1,0 +1,69 @@
+! colourscheme: juniper
+! author: orbita
+
+#define greyscale0 #151719
+#define greyscale1 #c5c8c6
+#define greyscale2 #282a2e
+#define greyscale3 #373b41
+#define greyscale4 #787878
+#define greyscale5 #c5c8c6
+
+#define lightred #d27979
+#define darkred #ac3939
+
+! #define lightorange #d29e79
+! #define darkorange #b26934
+
+#define orange #d29e79
+#define yellow #d1ca79 
+
+#define lightgreen #97d279
+#define darkgreen #559933
+
+#define lightcyan #79b4d2
+#define darkcyan #3986ac
+
+#define lightblue #7997d2
+#define darkblue #3960ac
+
+#define lightpurple #d279a6
+#define darkpurple #a14573
+
+! needs gcc to be installed.
+
+URxvt*foreground:	greyscale1
+URxvt*background:	greyscale0
+
+theme.foreground:	greyscale1
+theme.foreground-alt:	greyscale4
+theme.background:	greyscale0
+theme.selected:		greyscale4
+theme.danger:		lightred
+theme.primary:		lightcyan
+theme.warning:		orange
+theme.success:		lightgreen
+
+URxvt*color0:		greyscale0
+URxvt*color8:		greyscale2
+URxvt*color7:		greyscale4
+URxvt*color15:		greyscale1
+URxvt*color16:		greyscale0
+
+URxvt*color9:		lightred
+URxvt*color1: 		darkred
+
+URxvt*color10:		lightgreen
+URxvt*color2:		darkgreen
+
+URxvt*color11:		yellow
+URxvt*color3:		orange
+
+URxvt*color12:		lightblue
+URxvt*color4:		darkblue
+
+URxvt*color13:		lightpurple
+URxvt*color5:		darkpurple
+
+URxvt*color14:		lightcyan
+URxvt*color6:		darkcyan
+

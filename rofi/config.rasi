@@ -1,0 +1,4 @@
+configuration {
+terminal : "urxvt";
+}
+@theme "juniper"
