@@ -15,8 +15,8 @@ super + l
 	light-locker-command -l
 
 # system dialog
-super + s         
-	$HOME/.config/rofi/system.sh
+super + s 
+	$HOME/bin/system.py
 
 # make sxhkd reload its configuration files:
 super + Escape

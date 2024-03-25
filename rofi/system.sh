@@ -1,7 +1,7 @@
 #! /bin/bash
 
 mainMenu () {
-  options="lock screen\nsleep\nhibernate\nshutdown\nrestart\nscreenshot\nplayer\n"
+  options="lock screen\nsleep\nhibernate\nshutdown\nrestart\nscreenshot\nplayer\nrfkill"
   menu=$(echo -e $options | rofi -dmenu -p "system.sh")
   case "${menu}" in
     "lock screen")
@@ -30,6 +30,8 @@ mainMenu () {
       maim -s $HOME/pictures/screenshots/capture$(date --iso-8601=seconds).png ;;
     "player")
       playerMenu ;;
+    "rfkill")
+      rfkillDialogue ;;
     esac
 }
 
@@ -56,6 +58,17 @@ confirmDialogue () {
     esac
 }
 
+rfkillDialogue () {
+  optionsPM="block\nunblock"
+  menuPM=$(echo -e $optionsPM | rofi -dmenu -p "rfkill")
+  # TODO: Improve this to block ALL - using the json dump of rfkill
+  case "$menuPM" in
+    "block") rfkill block 0 1;;
+    "unblock") rfkill unblock 0 1 ;;
+  esac
+
+
+}
 
 mainMenu
 
