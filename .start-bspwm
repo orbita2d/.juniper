@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ -d "$HOME/pictures/backgrounds-shuffle" ]; then
+  feh --bg-fill $(find $HOME/pictures/backgrounds-shuffle -type f,l | shuf -n 1)
+fi
+
+# xsetroot -cursor_name "left_ptr"
+
+userresourcesFolder=$HOME/.config/Xresources
+if [ -d $userresourcesFolder ] ; then 
+  for file in "$userresourcesFolder"/*.xrdb ; do
+    xrdb -merge $file
+  done
+  unset file
+fi
+
+# Natural scrolling
+xinput set-prop 10 308 1
+# Mouse acceleration on the touchpad
+xinput set-prop 10 320 .3
+
+sxhkd &
+polybar &
+light-locker &
+spotify-launcher &
+sleep 1 && $HOME/bin/feh-blur --blur 8 --darken 0 --lighten 0 -d &
+sleep 1 && bspc desktop -f I
