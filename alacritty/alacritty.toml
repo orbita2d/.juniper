@@ -1,0 +1,34 @@
+[font]
+normal = { family="scientifica", style="Medium" }
+italic = { family="scientifica", style="Italic" }
+bold   = { family="scientifica", style="Bold"   }
+size=14
+offset = { x = 2, y = 0 }
+
+[window]
+padding = { x = 16, y=16 }
+
+[colors.primary]
+foreground = "#c5c8c6"
+dim_foreground = "#787878"
+background = "#151719"
+
+[colors.normal]
+black = "#151719"
+red = "#ac3939"
+green = "#559933"
+yellow = "#d29e79"
+blue = "#3960ac"
+magenta = "#a14573"
+cyan = "#3986ac"
+white = "#787878"
+
+[colors.bright]
+black = "#282a2e"
+red = "#d27979"
+green = "#97d279"
+yellow = "#d1ca79"
+blue = "#7997d2"
+magenta = "#d279a6"
+cyan = "#79b4d2"
+white = "#c5c8c6"
