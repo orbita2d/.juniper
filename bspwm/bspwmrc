@@ -17,7 +17,7 @@ source "$HOME/.start-bspwm"
 
 ## My Colours ##
 bspc config active_border_color	 	$(xrdb -get theme.background)
-bspc config focused_border_color 	$(xrdb -get theme.selected)
+bspc config focused_border_color 	$(xrdb -get theme.background-alt)
 bspc config normal_border_color		$(xrdb -get theme.background)
 bspc config presel_border_color		$(xrdb -get theme.primary)
 bspc config urgent_border_color		$(xrdb -get theme.danger)

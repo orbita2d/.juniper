@@ -37,6 +37,7 @@ URxvt*background:	greyscale0
 theme.foreground:	greyscale1
 theme.foreground-alt:	greyscale4
 theme.background:	greyscale0
+theme.background-alt:	greyscale2
 theme.selected:		greyscale4
 theme.danger:		lightred
 theme.primary:		lightcyan

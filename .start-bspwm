@@ -14,9 +14,11 @@ if [ -d $userresourcesFolder ] ; then
   unset file
 fi
 
-# Natural scrolling
+# exa colours
+export EXA_COLORS="xx=37:di=94:uu=93:ur=33:gr=33:tr=33:uw=91:gw=91:tw=91:ue=32:ux=92:gx=92:tx=92"
+# natural scrolling
 xinput set-prop 10 308 1
-# Mouse acceleration on the touchpad
+# mouse acceleration on the touchpad
 xinput set-prop 10 320 .3
 
 sxhkd &
