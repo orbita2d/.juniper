@@ -1,10 +1,14 @@
 #!/bin/bash
 
+# find a desktop background
+
 if [ -d "$HOME/pictures/backgrounds-shuffle" ]; then
   feh --bg-fill $(find $HOME/pictures/backgrounds-shuffle -type f,l | shuf -n 1)
 fi
 
 # xsetroot -cursor_name "left_ptr"
+
+# merge xresources files
 
 userresourcesFolder=$HOME/.config/Xresources
 if [ -d $userresourcesFolder ] ; then 
@@ -16,11 +20,13 @@ fi
 
 # exa colours
 export EXA_COLORS="xx=37:di=94:uu=93:ur=33:gr=33:tr=33:uw=91:gw=91:tw=91:ue=32:ux=92:gx=92:tx=92"
+
 # natural scrolling
 xinput set-prop 10 308 1
 # mouse acceleration on the touchpad
 xinput set-prop 10 320 .3
 
+## start programmes
 sxhkd &
 polybar &
 light-locker &
