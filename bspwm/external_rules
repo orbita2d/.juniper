@@ -5,8 +5,9 @@ class=$(echo ${2} | xargs)
 instance=$(echo ${3} | xargs)
 title=$(xtitle "$wid")
 
-#logfile=$HOME/.config/bspwm/external_rules_logfile
-logfile=/dev/null
+logfile=$HOME/.config/bspwm/external_rules.log
+#logfile=/dev/null
+
 
 printf "Wid: $wid Class: $class Instance: $instance Title: $title \n" >> $logfile
 
