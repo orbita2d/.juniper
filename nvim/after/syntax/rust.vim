@@ -6,7 +6,7 @@ syntax match rustBelleOperator ">=" conceal cchar=≥
 syntax match rustBelleOperator "!=" conceal cchar=≠
 
 " ->
-syn match rustArrowCharacter   /->/      contains=PointerTail,PointerHead
+"syn match rustArrowCharacter   /->/      contains=PointerTail,PointerHead
 syn match PointerTail          /-/       contained containedin=rustReturn conceal cchar=
 syn match PointerHead          /-\@<=>/  contained containedin=rustReturn conceal cchar=→
 
@@ -21,6 +21,6 @@ syn match FirstEqual  /=/        contained containedin=rustIsEqual conceal cchar
 syn match SecondEqual  /=\@<=>/  contained containedin=rustIsEqual conceal cchar=
 
 " #[
-syn match rustAttributeHash  /#\[/  contains=rustAH,rustAB
-syn match rustAH         /#/        contained containedin=rustAH conceal cchar=
-syn match rustAB        /\[/   contained containedin=rustAB conceal cchar=
+" syn match rustAttributeHash  /#\[/  contains=rustAH,rustAB
+" syn match rustAH         /#/        contained containedin=rustAH conceal cchar=
+" syn match rustAB        /\[/   contained containedin=rustAB conceal cchar=
