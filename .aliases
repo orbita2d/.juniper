@@ -14,4 +14,3 @@ alias chat='chatblade --openai-api-key "$(cat $HOME/.secrets/openai)"'
 
 # upload a file to taylor's internet
 alias upload='function _upload(){ curl -F"file=@$1" https://0x0.st; };_upload'
-

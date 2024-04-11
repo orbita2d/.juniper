@@ -18,6 +18,10 @@ super + l
 super + s 
 	$HOME/bin/system.py
 
+# take a screenshot
+super + shift + s
+	maimshot
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
