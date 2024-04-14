@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pygments-juniper" 
+version = "0.0.1"
+dependencies = ["pygments"]
+
+[tool.hatch.build.targets.wheel]
+include=["juniper.py"]
+
+# Declare plugin styles in this table. The key *is* significant: it is the name
+# the style will be recognized as. In this example, we can use
+#
+#   pygmentize -Ostyle=example-style"
+#
+# on the command line. Also,
+#
+#   pygments.styles.get_style_by_name("example-style")
+#
+# will return the style class.
+
+[project.entry-points."pygments.styles"]
+juniper = "juniper:Juniper"
+

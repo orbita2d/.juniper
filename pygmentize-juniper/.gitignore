@@ -1,0 +1,4 @@
+.venv/
+*.tar.zst
+pkg/
+src/dist/
