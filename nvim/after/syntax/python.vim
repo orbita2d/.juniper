@@ -33,3 +33,4 @@ hi link pyNiceKeyword Keyword
 hi! link Conceal Operator
 
 setlocal conceallevel=1
+

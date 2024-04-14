@@ -58,7 +58,7 @@ highlight Search         ctermfg=0    ctermbg=11
 " columns.
 highlight LineNr       ctermfg=7
 highlight CursorLineNr ctermfg=7
-highlight Comment      ctermfg=7
+highlight Comment      ctermfg=7 
 highlight ColorColumn  ctermfg=7    ctermbg=8
 highlight Folded       ctermfg=7    ctermbg=8
 highlight FoldColumn   ctermfg=7    ctermbg=8
@@ -69,6 +69,10 @@ highlight StatusLine   ctermfg=15   ctermbg=8    cterm=bold
 highlight StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
 highlight VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
 highlight SignColumn                ctermbg=8
+
+highlight Include ctermfg=3
+
+highlight Class ctermfg=9
 
 highlight link DimFzfFg     Normal
 highlight link DimFzfBg     Normal
