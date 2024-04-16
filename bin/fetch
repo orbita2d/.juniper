@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+
+# sysfetch
+# Thanks to u/x_ero for his sysinfo script
+# Modified by gh0stzk https://github.com/gh0stzk/dotfiles
+
+# color escapes
+CBK=$(tput setaf 8 ) # dark gray
+CRE=$(tput setaf 9 ) # red
+CGR=$(tput setaf 10) # green
+CYE=$(tput setaf 11) # yellow
+CBL=$(tput setaf 12) # blue
+COR=$(tput setaf 3 ) # orange
+CMA=$(tput setaf 13) # pink
+CCY=$(tput setaf 14) # cyan
+CWH=$(tput setaf 15) # white
+CLG=$(tput setaf 7 ) # light gray
+CBD=$(tput bold)
+CNC=$(tput sgr0)
+
+# vars
+FULL=─
+EMPTY=─
+INDICATOR="|"
+SEP=→
+
+
+name=$USER
+host=$(uname -n)
+distro=$(uname -o | awk -F '"' '/PRETTY_NAME/ { print $2 }' /etc/os-release)
+packages=$(pacman -Q | wc -l)
+wm=$(xprop -id "$(xprop -root -notype | awk '$1=="_NET_SUPPORTING_WM_CHECK:"{print $5}')" -notype -f _NET_WM_NAME 8t | grep "WM_NAME" | cut -f2 -d \")
+storage=$(df -h --output=used / | awk 'NR == 2 { print $1 }')
+term=$(ps -o sid= -p "$$" | xargs ps -o ppid= -p | xargs ps -o comm= -p)
+uptm=$(uptime -p | sed -e 's/hour/hr/' -e 's/hours/hrs/' -e 's/minutes/mins/' -e 's/minute/min/' -e 's/up //')
+font=scientifica
+machine="Framework 13"
+
+#Cleanup first
+clear
+
+# find the center of the screen
+COL=$(tput cols)
+ROW=$(tput lines)
+((PADY = ROW / 3 - 12)) # put the welcome to ... ~ 1/3 of the way down the screen
+((PADX = COL / 2 - 32 / 2))
+
+for ((i = 0; i < PADX; ++i)); do
+    PADC="$PADC "
+done
+
+for ((i = 0; i < PADY; ++i)); do
+    PADR="$PADR\n"
+done
+
+# vertical padding
+printf "%b" "$PADR"
+printf "\n"
+
+PADXX=$((PADX - 3))
+for ((i = 0; i < PADXX; ++i)); do
+    PADCC="$PADCC "
+done
+
+# Ascii art arms
+cat <<EOF
+$PADCC$CBD                   $CCY.
+$PADCC                  $CCY/ $CMA\\
+$PADCC                 $CCY/   $CMA\\
+$PADCC                $CCY/^.   $CMA\\
+$PADCC               $CCY/  .$CWH-$CMA.  \\
+$PADCC              $CCY/  (   $CMA) _\\
+$PADCC             $CCY/ _.~   $CMA~._^\\
+$PADCC            $CCY/.^         $CMA^.\\
+
+EOF
+
+BAR=" ◕"
+OUTT="$CBD$CRE$BAR$COR$BAR$CYE$BAR$CGR$BAR$CCY$BAR$CBL$BAR$CMA$BAR$CNC"
+printf "%s%b\n\n" "$PADC" "         $OUTT"
+
+
+# greetings
+printf "%s%b\n" "$PADC" "            Hi $CCY$CBD$name$CNC"
+printf "%s%b\n" "$PADC" "      Welcome to $CMA$CBD$host$CNC"
+printf "%s%b\n\n" "$PADC" "          up $CYE$CBD$uptm$CNC"
+
+# environment
+printf "%s%b" "$PADC" "$CWH        distro $CRE$SEP $CNC$distro\n"
+printf "%s%b" "$PADC" "$CWH        kernel $COR$SEP $CNC$(uname -r)\n"
+printf "%s%b" "$PADC" "$CWH       machine $CYE$SEP $CNC$machine\n"
+printf "%s%b" "$PADC" "$CWH         shell $CGR$SEP $CNC${SHELL##*/}\n"
+printf "%s%b" "$PADC" "$CWH          term $CCY$SEP $CNC${term}\n"
+printf "%s%b" "$PADC" "$CWH            wm $CBL$SEP $CNC${wm}\n"
+printf "%s%b" "$PADC" "$CWH          font $CMA$SEP $CNC${font}\n"
+printf " %s\n" "$CNC"
+
+# progress bar
+draw() {
+    perc=$1
+    size=$2
+    inc=$((perc * size / 100))
+    out=
+    color="$3"
+    for v in $(seq 0 $((size - 1))); do
+        test "$v" -le "$inc" &&
+        out="${out}\e[1;${CWM}m${FULL}" ||
+        out="${out}\e[0;37m${CLG}${EMPTY}"
+    done
+    printf "$out"
+    printf "$CWH"
+}
+
+# cpu
+cpu=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}' | cut -d'.' -f1)
+c_lvl=$(printf '%s' "$cpu")
+printf "%b" "$PADC"
+printf "   $CMA%-4s $CWH%-5s %-25s \n" " cpu" "$c_lvl%" "$(draw "$c_lvl" 15 35)"
+
+# ram
+ram=$(free | awk '/Mem:/ {print int($3/$2 * 100.0)}')
+printf "%b" "$CNC" "$PADC"
+printf "   $CMA%-4s $CWH%-5s %-25s \n" " ram" "$ram%" "$(draw "$ram" 15 35)"
+
+# hide the cursor and wait for user input
+tput civis
+read -n 1
+
+# give the cursor back
+tput cnorm

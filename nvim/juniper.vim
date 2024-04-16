@@ -35,7 +35,7 @@ highlight Special        ctermfg=13
 highlight Identifier     cterm=NONE ctermfg=14
 highlight Statement      ctermfg=3
 highlight PreProc        ctermfg=6
-highlight Type           ctermfg=11
+highlight Type           ctermfg=11 cterm=bold
 highlight Underlined     cterm=underline
 highlight Ignore         ctermfg=15
 highlight Error          ctermfg=1 
@@ -71,8 +71,6 @@ highlight VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
 highlight SignColumn                ctermbg=8
 
 highlight Include ctermfg=3
-
-highlight Class ctermfg=9
 
 highlight link DimFzfFg     Normal
 highlight link DimFzfBg     Normal
