@@ -112,10 +112,10 @@ element-text {
 }
 
 scrollbar {
-    width:        4px;
+    width:        2px;
     border:       0;
     handle-color: @scrollbar-color;
-    handle-width: 8px;
+    handle-width: 2px;
     padding:      0;
 }
 sidebar {
