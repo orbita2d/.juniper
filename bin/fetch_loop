@@ -1,0 +1,10 @@
+#! /bin/env bash
+tput civis
+while true; do
+	$HOME/bin/_fetch
+	read -n1 -t60 input
+	if [[ ! -z "$input" ]]; then
+		break
+	fi
+done
+tput cnorm

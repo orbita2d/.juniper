@@ -1,11 +1,4 @@
 #!/bin/bash
-
-# find a desktop background
-
-if [ -d "$HOME/pictures/backgrounds-shuffle" ]; then
-  feh --bg-fill $(find $HOME/pictures/backgrounds-shuffle -type f,l | shuf -n 1)
-fi
-
 # xsetroot -cursor_name "left_ptr"
 
 # merge xresources files
@@ -16,6 +9,12 @@ if [ -d $userresourcesFolder ] ; then
     xrdb -merge $file
   done
   unset file
+fi
+
+# find a desktop background
+
+if [ -d "$HOME/pictures/backgrounds-shuffle" ]; then
+  feh --bg-fill $(find $HOME/pictures/backgrounds-shuffle -type f,l | shuf -n 1)
 fi
 
 # exa colours

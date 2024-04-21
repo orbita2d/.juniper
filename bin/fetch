@@ -122,9 +122,3 @@ ram=$(free | awk '/Mem:/ {print int($3/$2 * 100.0)}')
 printf "%b" "$CNC" "$PADC"
 printf "   $CMA%-4s $CWH%-5s %-25s \n" " ram" "$ram%" "$(draw "$ram" 15 35)"
 
-# hide the cursor and wait for user input
-tput civis
-read -n 1
-
-# give the cursor back
-tput cnorm

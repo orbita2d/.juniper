@@ -1,6 +1,6 @@
 /*  ============  */
 /* = rofi theme = */
-/* = by  Orbita = */
+/* = by orbita  = */
 /* =  CC-BY-SA  = */
 /*  ============  */
 
@@ -36,7 +36,6 @@
     separatorcolor:              @normal-background;
     background-color:            rgba ( 0, 0, 0, 0 % );
     scrollbar-color:		 @foreground-alt;
-    // font:			 "Terminess Nerd Font Mono 17";
     font:			 "scientifica 20";
 }
 window {
