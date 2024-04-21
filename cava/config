@@ -220,7 +220,7 @@ alacritty_sync = 1
 gradient = 1
 gradient_count = 4
 gradient_color_1 = '#151919'
-gradient_color_2 = '#7997d2'
+gradient_color_2 = '#3986ac'
 gradient_color_3 = '#79b4d2'
 gradient_color_4 = '#c5c8c6'
 

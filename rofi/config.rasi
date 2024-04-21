@@ -1,4 +1,4 @@
 configuration {
-terminal : "urxvt";
+	terminal : "alacritty";
 }
 @theme "juniper"
