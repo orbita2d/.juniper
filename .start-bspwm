@@ -27,9 +27,9 @@ export PYGMENTIZE_STYLE=juniper
 export CHATBLADE_THEME="juniper"
 
 # natural scrolling
-xinput set-prop 12 308 1
+xinput set-prop "PIXA3854:00 093A:0274 Touchpad" 308 1
 # mouse acceleration on the touchpad
-xinput set-prop 12 320 .3
+xinput set-prop "PIXA3854:00 093A:0274 Touchpad" 320 .3
 
 ## start programmes
 sxhkd &

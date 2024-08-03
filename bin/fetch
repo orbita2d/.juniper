@@ -81,9 +81,9 @@ printf "%s%b\n\n" "$PADC" "         $OUTT"
 
 
 # greetings
-printf "%s%b\n" "$PADC" "            Hi $CCY$CBD$name$CNC"
+printf "%s%b\n" "$PADC" "           Hi $CCY$CBD$name$CNC"
 printf "%s%b\n" "$PADC" "      Welcome to $CMA$CBD$host$CNC"
-printf "%s%b\n\n" "$PADC" "          up $CYE$CBD$uptm$CNC"
+printf "%s%b\n\n" "$PADC" "        up $CYE$CBD$uptm$CNC"
 
 # environment
 printf "%s%b" "$PADC" "$CWH        distro $CRE$SEP $CNC$distro\n"

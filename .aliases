@@ -10,7 +10,7 @@ alias paste='xclip -o -selection clipboard' # paste | command or paste > file
 
 alias mfetch='clear; neofetch --config $HOME/.config/neofetch/mini.conf --colors fg fg fg fg fg fg --off'
 alias nfetch='clear; neofetch --config $HOME/.config/neofetch/full.conf '
-alias chat='chatblade --openai-api-key "$(cat $HOME/.secrets/openai)"'
+alias chat='chatblade --openai-api-key "$(cat $HOME/.secrets/openai)" -c4'
 
 # upload a file to taylor's internet
 alias upload='function _upload(){ curl -F"file=@$1" https://0x0.st; };_upload'
