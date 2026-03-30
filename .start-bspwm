@@ -25,11 +25,10 @@ export PYGMENTIZE_STYLE=juniper
 
 # pygments theme for chatblade
 export CHATBLADE_THEME="juniper"
+# SSH agent config
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gcr/ssh"
 
-# natural scrolling
-xinput set-prop "PIXA3854:00 093A:0274 Touchpad" 308 1
-# mouse acceleration on the touchpad
-xinput set-prop "PIXA3854:00 093A:0274 Touchpad" 320 .3
+source $HOME/bin/configure-inputs
 
 ## start programmes
 sxhkd &
