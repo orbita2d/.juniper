@@ -1,0 +1,18 @@
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry 'Arch Linux (text mode)' --class arch --class gnu-linux --class gnu --class os {
+    load_video
+    set gfxpayload=keep
+    insmod gzio
+    insmod part_gpt
+    insmod fat
+    search --no-floppy --fs-uuid --set=root CA55-8822
+    echo 'Loading Linux linux ...'
+    linux /vmlinuz-linux root=/dev/mapper/rootGroup-root rw rd.luks.name=9d8449af-8f16-463d-99f6-9d4d0656b03c=cryptlvm loglevel=3 quiet lsm=landlock,lockdown,yama,integrity,apparmor,bpf audit=1 systemd.unit=multi-user.target
+    echo 'Loading initial ramdisk ...'
+    initrd /initramfs-linux.img
+}
