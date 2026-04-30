@@ -1,0 +1,65 @@
+# Figure properties
+figure.figsize: 5, 4
+figure.dpi: 100
+figure.facecolor: white
+figure.edgecolor: white
+
+# Font properties
+font.size: 10
+# font.family: STIXGeneral 
+# font.serif: STIXGeneral
+font.family: sans-serif
+font.sans-serif: Montserrat, Helvetica, DejaVu Sans
+# mathtext.fontset: stix
+text.usetex: False
+
+# Axes properties
+axes.facecolor: white
+axes.edgecolor: 000000
+axes.labelsize: 11
+axes.titlesize: 12
+axes.grid: True
+axes.grid.which: major
+axes.grid.axis: both
+axes.linewidth: 1.0
+axes.spines.top: True
+axes.spines.right: True
+axes.axisbelow: True 
+
+# palette
+axes.prop_cycle: cycler('color', ['6495ED', 'D64045', '002147', '934C8B', '3E78B2', 'A83C54'])
+
+# Grid properties
+grid.color: E5E5E5
+grid.linestyle: -
+grid.linewidth: 1.
+grid.alpha: 0.8
+
+# Line properties
+lines.linewidth: 1.2
+lines.markersize: 8
+lines.markeredgewidth: 1.5
+
+# Legend properties
+legend.fontsize: 10
+legend.frameon: True
+legend.framealpha: 0.5
+legend.facecolor: white
+legend.edgecolor: none
+legend.fancybox: True
+
+# Tick properties
+xtick.direction: out
+ytick.direction: out
+xtick.labelsize: 10
+ytick.labelsize: 10
+xtick.major.width: 1.0
+ytick.major.width: 1.0
+xtick.minor.width: 0.6
+ytick.minor.width: 0.6
+
+# Save figure properties
+savefig.dpi: 300
+savefig.format: png
+savefig.bbox: tight
+savefig.transparent: False
